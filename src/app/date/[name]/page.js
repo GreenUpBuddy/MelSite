@@ -5,9 +5,15 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ListIcon from '@mui/icons-material/List';
 import Image from "next/image";
 import Link from "next/link";
+function Includes(word){
+    return word.includes("House");
+}
 
 export default function Page({ params }) {
+    const reiki =  "An ancient technique used for stress reduction and relaxation.  It has been shown to have many benefits for both physical and mental health.  It’s a non-invasive therapy that involves me placing my hands near the body. I use 4 sacred herbs, stones and prayer to create a healing experience focused on clearing chakra blockages. \nThe Experience\nSet an intention for the session\nGrounding meditation (laying down)\nChakra clearing\nClosing ceremony\nDiscussion at the end\nNote: this practice is supportive of people from all different beliefs."
     const details = "This is a temporary placeholder for the details section...This is a temporary placeholder for the details section...This is a temporary placeholder for the details section...This is a temporary placeholder for the details section."
+    const house = "A spiritual practice that involves burning sage or palo santo to repel negative energies and spirits."
+    let name = params.name;
     return (
         <>
             <MyAppBar/>
@@ -20,14 +26,13 @@ export default function Page({ params }) {
                         <Stack style={{paddingTop:20}} alignItems="center">
                             <Image unoptimized src="https://placehold.co/350x350" width={350} height={350} alt="placeholder"/>
                             <Typography style={{paddingTop:10}} gutterBottom variant="h5" component="div">
-                                {params.name.replace("%20", " ")}
+                                {name.replaceAll("%20", " ").replaceAll("%26", "&")}
                             </Typography>
                             <span>
-                                <Chip style={{marginRight:10}} label="1 for 1.99" size='medium'/> 
-                                <Chip label="5 for 4.99" color='primary' size='medium'/>
+                                <Chip label={(name == "Reiki") ? "$90" : (Includes(name)) ? "$50" : "NOT FOUND"} size='small'/>
                             </span>
                             <Typography gutterBottom align="center" style={{ paddingTop: 10,marginLeft:60,marginRight:60}} variant="body1" component="span">
-                                {details}
+                                {(name == "Reiki") ? reiki : (Includes(name)) ? house : details}
                             </Typography>
                             <span  style={{marginBottom: 20}}>
                             <Fab component={Link} href='/book' style={{alignItems: "center"}} variant="extended" size="medium" color="primary">

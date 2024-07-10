@@ -5,15 +5,25 @@ import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { List, ListItem, Link,Button,Fab,ListItemButton, Typography, Box, TextField, FormControl, InputLabel, Select, MenuItem} from "@mui/material";
 import { Paper, Stack } from '@mui/material';
+import { redirect } from 'next/navigation';
+import { useSession, getSession } from "next-auth/react"
 
 //get TIMES from DB
 let list = ["time1","time2"];
 
 export default function Admin(){
+    const session = useSession()
     const [tod, setTod] = React.useState('');
     const handleChange = (event) => {
         setTod(event.target.value);
     };
+    // console.log(session)
+    // console.log(session.user)
+    if (!session) {
+        redirect("/admin/signin");
+    }else if(session.data.user.email != "jdsawyer1223@gmail.com"){
+        redirect("/");
+    }
     return(<>
         <span>
         <LocalizationProvider dateAdapter={AdapterDayjs}>

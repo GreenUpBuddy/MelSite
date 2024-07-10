@@ -31,8 +31,8 @@ export default function Home() {
         <Grid container spacing={2}>
           <Grid item xs={3}>
           <DataCard 
-            name= "s1"
-            details= "det1"
+            name= "Reiki"
+            details= "An ancient technique used for stress reduction and relaxation.  It has been shown to have many benefits for both physical and mental health.  It’s a non-invasive therapy that involves me placing my hands near the body. I use 4 sacred herbs, stones and prayer to create a healing experience focused on clearing chakra blockages."
             width={500}
             price= {<><Chip label={"$90"} size='small'/></>}
             image= {"https://placehold.co/140"}
@@ -40,8 +40,8 @@ export default function Home() {
           </Grid>
           <Grid item xs={3}>
           <DataCard 
-            name= "s2"
-            details= "det2"
+            name= "House Clearing & Blessing"
+            details= "A spiritual practice that involves burning sage or palo santo to repel negative energies and spirits."
             width={500}
             price= {<><Chip label={"$90"} size='small'/></>}
             image= {"https://placehold.co/140"}
