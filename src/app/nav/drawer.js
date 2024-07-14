@@ -24,7 +24,7 @@ export const MuiDrawer = () =>{
                 <Box p={2} width={250} textAlign= "center" role="presentation">
                 <List>
                     {["Home", "Service 1","Service 2","Service 3","Book"].map((text, index) => (
-                    <ListItemButton key={text} component={Link} to={(text == "Home" ) ? "/" : (text == "Reviews") ? "/review" : "/date/" + text.toLowerCase()}>
+                    <ListItemButton key={text} component={Link} to={(text == "Home" ) ? "/" : (text == "Book") ? "/book" : "/date/" + text.toLowerCase()}>
                         <ListItemIcon>
                         {icons[text]}
                         </ListItemIcon>
