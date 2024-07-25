@@ -14,7 +14,7 @@ import { useState } from "react";
 export const MuiDrawer = () =>{
     
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-    const icons = {"Home": <HomeIcon/>, "Service 1": <FavoriteIcon/>,"Service 2":<FavoriteIcon/>,"Service 3":<FavoriteIcon/>,"Book": <EventIcon/>}
+    const icons = {"Home": <HomeIcon/>, "Reiki": <FavoriteIcon/>,"House Clearing & Blessing":<FavoriteIcon/>,"Service 3":<FavoriteIcon/>,"Book": <EventIcon/>}
     return(
         <>
         <IconButton p={80} size="large" edge="start" color="inherit" aria-label="logo" onClick={()=>setIsDrawerOpen(true)}>
@@ -23,7 +23,7 @@ export const MuiDrawer = () =>{
             <Drawer anchor="left" open={isDrawerOpen} onClose={() => setIsDrawerOpen(false)}>
                 <Box p={2} width={250} textAlign= "center" role="presentation">
                 <List>
-                    {["Home", "Service 1","Service 2","Service 3","Book"].map((text, index) => (
+                    {["Home", "Reiki","House Clearing & Blessing","Book"].map((text, index) => (
                     <ListItemButton key={text} component={Link} to={(text == "Home" ) ? "/" : (text == "Book") ? "/book" : "/date/" + text.toLowerCase()}>
                         <ListItemIcon>
                         {icons[text]}
