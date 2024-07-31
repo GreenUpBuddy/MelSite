@@ -10,7 +10,7 @@ export const MyAppBar = () => {
   return (
     <Box sx={{ flexGrow: 1 }} style={{paddingBottom: 20}}>
         <AppBar position="static">
-            <Toolbar>
+            <Toolbar style={{ backgroundColor: '#333', color: 'white', padding: '10px', textAlign: 'center' }}>
                 <MuiDrawer/>
             </Toolbar>
         </AppBar>

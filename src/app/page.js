@@ -10,8 +10,8 @@ function Item (title,details,price,image) {
     <DataCard 
     name= {title}
     details= {details}
-    width={500}
-    price= {<><Chip label={price} size='small'/></>}
+    width={650}
+    price= {<><Chip label={price} width={200} size='small'/></>}
     image= {image}
     />
   )
@@ -21,20 +21,20 @@ export default function Home() {
   return (
     <>
       <MyAppBar/>
-      <Stack>
+      <Stack style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         <img style={{paddingBottom: 20}} src="https://placehold.co/140" height={500} width={750}/>
-        <Typography gutterBottom>
+        <Typography gutterBottom style={{ margin: '20px 0' }}>
           THIS IS WHERE THE ABOUT SECTION WILL GO
         </Typography>
         <div style={{paddingBottom: 20}}>
         <span>
-        <Grid container spacing={2}>
+        <Grid container spacing={2} style={{paddingBottom: 20, justifyContent: "center"}}>
           <Grid item xs={3}>
           <DataCard 
             name= "Reiki"
             details= "An ancient technique used for stress reduction and relaxation.  It has been shown to have many benefits for both physical and mental health.  It’s a non-invasive therapy that involves me placing my hands near the body. I use 4 sacred herbs, stones and prayer to create a healing experience focused on clearing chakra blockages."
-            width={500}
-            price= {<><Chip label={"$90"} size='small'/></>}
+            width={650}
+            price= {<><Chip label={"$90"} color="success" size='small'/></>}
             image= {"https://placehold.co/140"}
             />
           </Grid>
@@ -42,8 +42,8 @@ export default function Home() {
           <DataCard 
             name= "House Clearing & Blessing"
             details= "A spiritual practice that involves burning sage or palo santo to repel negative energies and spirits."
-            width={500}
-            price= {<><Chip label={"$90"} size='small'/></>}
+            width={650}
+            price= {<><Chip label={"$90"} color="success" size='small'/></>}
             image= {"https://placehold.co/140"}
             />
           </Grid>
@@ -52,19 +52,19 @@ export default function Home() {
             name= "s3"
             details= "det3"
             width={500}
-            price= {<><Chip label={"$90"} size='small'/></>}
+            price= {<><Chip label={"$90"} color="success" size='small'/></>}
             image= {"https://placehold.co/140"}
             />
           </Grid>
           </Grid>
         </span>
       </div> 
-      <Typography variant="h3" gutterBottom>
+      <Typography variant="h3" gutterBottom style={{ margin: '20px 0' }}>
         Reviews
       </Typography>
-      <Grid style={{paddingBottom: 20}} container spacing={8}>
+      <Grid style={{paddingBottom: 20, justifyContent: "center"}} container spacing={8}>
           <Grid item xs={3}>
-            <Paper elevation={8} style={{width: "25vw"}}>
+            <Paper elevation={8} style={{ width: '25vw', padding: '20px', backgroundColor: '#f5f5f5', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
               <Typography>
                 "A Profound Inner Exploration - My first reiki experience was an unexpected journey deep within myself. 
                 While unsure of what to expect, I was open and ready for the exploration. The session began with a focus on healing, 
@@ -79,7 +79,7 @@ export default function Home() {
             </Paper>
           </Grid>
           <Grid item xs={3}>
-            <Paper elevation={8} style={{width: "25vw"}}>
+            <Paper elevation={8} style={{ width: '25vw', padding: '20px', backgroundColor: '#f5f5f5', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
               <Typography>
               "First off...the whole experience was so peaceful. I was actually in a heightened emotional state when you came over. 
               Been dealing with somethings that have made me feel very down, a little depressed, and allowing my inner critic to take over. 
@@ -91,7 +91,7 @@ export default function Home() {
             </Paper>
           </Grid>
           <Grid item xs={3}>
-            <Paper elevation={8} style={{width: "25vw"}}>
+            <Paper elevation={8} style={{ width: '25vw', padding: '20px', backgroundColor: '#f5f5f5', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
               <Typography>
               "I had one reiki session with melody and can not praise the experience enough. This was my first experience with reiki so I did not know what to fully expect. 
               Melody was very warm and inviting and made me feel very comfortable just upon our initial meeting. She was very knowledgeable and walked me through what the session would entail and gave a bit of her personal background and experiences with reiki as well which I think elevated the experience. 

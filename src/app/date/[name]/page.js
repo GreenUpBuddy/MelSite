@@ -6,7 +6,7 @@ import ListIcon from '@mui/icons-material/List';
 import Image from "next/image";
 import Link from "next/link";
 function Includes(word){
-    return word.includes("house");
+    return word.includes("house") || word.includes("House");
 }
 
 export default function Page({ params }) {
@@ -15,7 +15,7 @@ export default function Page({ params }) {
     const house = "A spiritual practice that involves burning sage or palo santo to repel negative energies and spirits."
     let nameR = "Reiki"
     let nameH = "House Clearing & Blessing"
-    let name = params.name;
+    let name = params.name.toLowerCase();
     return (
         <>
             <MyAppBar/>
@@ -31,7 +31,7 @@ export default function Page({ params }) {
                                 {(name == "reiki") ? nameR : (Includes(name)) ? nameH : params.name}
                             </Typography>
                             <span>
-                                <Chip label={(name == "reiki") ? "$90" : (Includes(name)) ? "$50" : "NOT FOUND"} size='small'/>
+                                <Chip color="success" label={(name == "reiki") ? "$90" : (Includes(name)) ? "$50" : "NOT FOUND"} size='small'/>
                             </span>
                             <Typography gutterBottom align="center" style={{ paddingTop: 10,marginLeft:60,marginRight:60}} variant="body1" component="span">
                                 {(name == "reiki") ? reiki : (Includes(name)) ? house : details}

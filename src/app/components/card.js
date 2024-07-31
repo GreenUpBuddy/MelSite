@@ -19,10 +19,10 @@ export const DataCard = (props) => {
           alt="green iguana"
         />
         <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
+            <Typography gutterBottom variant="h5" component="div" textAlign={"center"}>
                 {props.name}
             </Typography>
-            <Typography variant="overline" display="block" gutterBottom>
+            <Typography variant="overline" display="block" gutterBottom textAlign={"center"}>
                 {props.price}
             </Typography>
 

@@ -13,6 +13,7 @@ let list = ["time1","time2"];
 
 let GridSelect = () => {
     return(<>
+    <div style={{justifyContent: "center"}}>
     <Grid container item spacing={2} style={{paddingBottom: 20}}>
         <Grid item xs={3}>
             <ServiceCard
@@ -39,7 +40,7 @@ let GridSelect = () => {
         image= {"https://placehold.co/350x350"}/>
         </Grid>
     </Grid>
-    </>);
+    </div></>);
 }
 let ConfirmSelect = (props) => {
     return(<>
@@ -60,16 +61,14 @@ export default function Book(){
     return(<>
         <div style={{paddingBottom: 50}}>
         <MyAppBar/>
-        <span>
-        <Typography>Select a Date:</Typography>
-        </span>
-        <span>
-        <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <DatePicker onAccept={handleIt()}/>
-        </LocalizationProvider>
-        </span>
+        <div style={{ padding: '20px 0', textAlign: 'center' }}>
+            <Typography variant="h5" style={{ marginBottom: '10px' }}>Select a Date:</Typography>
+            <LocalizationProvider dateAdapter={AdapterDayjs}>
+                <DatePicker onAccept={handleIt} />
+            </LocalizationProvider>
+        </div>
         <Stack style={{paddingTop: 25,paddingBottom: 20}}>
-        <Paper elevation={8} square={false} style={{width: '45vw', height: '30vw',overflow: "auto"}}>
+        <Paper elevation={8} square={false} style={{ width: '90vw', maxWidth: '800px', height: '30vw', overflow: "auto", margin: '0 auto', paddingBottom: '20px' }}>
             <Stack>
                 <List>
                 {list.map((item, index) => (
@@ -82,11 +81,13 @@ export default function Book(){
                 </List>
             </Stack>
         </Paper>
-        <span style={{paddingBottom: 20}}></span>
-        <GridSelect/>
-        <ConfirmSelect  date="1/1/1111" time="12:00 PM" service="serv 1"/>
+        <div style={{paddingTop: 20, justifyContent: "center", display: "flex", flexDirection: "column", alignItems: "center", gap: '20px' }}>
+            //maybe put this vertically next to the time?
+            <GridSelect/>
+            <ConfirmSelect  date="1/1/1111" time="12:00 PM" service="serv 1"/>
+        </div>
         <div style={{paddingTop: 20, paddingBottom: 20}}>
-        <Paper elevation={8} square={false} style={{width: '60vw', height: '13vw',overflow: "auto"}}>
+        <Paper elevation={8} square={false} style={{ width: '90vw', maxWidth: '800px', height: '13vw', overflow: "auto", margin: '0 auto', padding: '20px', textAlign: 'center' }}>
             <Typography gutterBottom variant="h4">
                 Dont see your preferred time or date?
             </Typography>
