@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Image from "next/image";
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -9,13 +10,16 @@ import Link from 'next/link';
 //props.name
 export const DataCard = (props) => {
   let link = props.name;
+  const key = (link == "reiki") ? 1 : 2;
   return (
     <Card sx={{ maxWidth: props.width }}>
-      <CardActionArea component={Link} href={`date/${link}`} >
-        <CardMedia
+      <CardActionArea key={"card" + key} component={Link} href={`date/${link}`} >
+        <Image
+          unoptimized
           component="img"
           height="140"
-          image={props.image}
+          width="200"
+          src={props.image}
           alt="green iguana"
         />
         <CardContent>

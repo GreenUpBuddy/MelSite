@@ -18,11 +18,13 @@ function Item (title,details,price,image) {
 }
 
 export default function Home() {
+  const img = JSON.parse(JSON.stringify(require("/Users/jdsawyer/Desktop/Mel Site/mel-site/public/images/image_50339841.jpg")));
+  const rek = JSON.parse(JSON.stringify(require("/Users/jdsawyer/Desktop/Mel Site/mel-site/public/images/IMG_2723.jpg")));
   return (
     <>
       <MyAppBar/>
       <Stack style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        <img style={{paddingBottom: 20}} src="https://placehold.co/140" height={500} width={750}/>
+        <Image unoptimized key={0} style={{paddingBottom: 20}} src={img} height={500} width={750} alt="idk"/>
         <Typography gutterBottom style={{ margin: '20px 0' }}>
           THIS IS WHERE THE ABOUT SECTION WILL GO
         </Typography>
@@ -31,11 +33,11 @@ export default function Home() {
         <Grid container spacing={2} style={{paddingBottom: 20, justifyContent: "center"}}>
           <Grid item xs={3}>
           <DataCard 
-            name= "Reiki"
+            name= "Reiki Energy Healing"
             details= "An ancient technique used for stress reduction and relaxation.  It has been shown to have many benefits for both physical and mental health.  It’s a non-invasive therapy that involves me placing my hands near the body. I use 4 sacred herbs, stones and prayer to create a healing experience focused on clearing chakra blockages."
             width={650}
-            price= {<><Chip label={"$90"} color="success" size='small'/></>}
-            image= {"https://placehold.co/140"}
+            price= {<><Chip label={"$120"} color="success" size='small'/></>}
+            image= {rek}
             />
           </Grid>
           <Grid item xs={3}>
@@ -49,10 +51,10 @@ export default function Home() {
           </Grid>
           <Grid item xs={3}>
           <DataCard 
-            name= "s3"
-            details= "det3"
+            name= "Oracle Reading"
+            details= "Tarot Cards"
             width={500}
-            price= {<><Chip label={"$90"} color="success" size='small'/></>}
+            price= {<><Chip label={"$25"} color="success" size='small'/></>}
             image= {"https://placehold.co/140"}
             />
           </Grid>

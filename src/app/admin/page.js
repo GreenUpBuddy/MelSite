@@ -19,7 +19,7 @@ export default function Admin(){
     };
     // console.log(session)
     // console.log(session.user)
-    if (!session) {
+    if (!session.data.user) {
         redirect("/admin/signin");
     }else if(session.data.user.email != "jdsawyer1223@gmail.com"){
         redirect("/");
@@ -45,7 +45,7 @@ export default function Admin(){
             <TextField label="Hour" variant="outlined" />
             <TextField label="Min" variant="outlined" />
             <FormControl style={{width: "10vw"}}>
-                <InputLabel id="demo-simple-select-label">AM/PM</InputLabel>
+                <InputLabel id="AM/PM">AM/PM</InputLabel>
                     <Select
                     value={tod}
                     label="AM/PM"

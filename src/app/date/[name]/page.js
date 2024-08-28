@@ -13,7 +13,7 @@ export default function Page({ params }) {
     const reiki =  "An ancient technique used for stress reduction and relaxation.  It has been shown to have many benefits for both physical and mental health.  It’s a non-invasive therapy that involves me placing my hands near the body. I use 4 sacred herbs, stones and prayer to create a healing experience focused on clearing chakra blockages. \nThe Experience\nSet an intention for the session\nGrounding meditation (laying down)\nChakra clearing\nClosing ceremony\nDiscussion at the end\nNote: this practice is supportive of people from all different beliefs."
     const details = "This is a temporary placeholder for the details section...This is a temporary placeholder for the details section...This is a temporary placeholder for the details section...This is a temporary placeholder for the details section."
     const house = "A spiritual practice that involves burning sage or palo santo to repel negative energies and spirits."
-    let nameR = "Reiki"
+    let nameR = "Reiki Energy Healing"
     let nameH = "House Clearing & Blessing"
     let name = params.name.toLowerCase();
     return (
@@ -31,7 +31,7 @@ export default function Page({ params }) {
                                 {(name == "reiki") ? nameR : (Includes(name)) ? nameH : params.name}
                             </Typography>
                             <span>
-                                <Chip color="success" label={(name == "reiki") ? "$90" : (Includes(name)) ? "$50" : "NOT FOUND"} size='small'/>
+                                <Chip color="success" label={(name == "reiki") ? "$ 120" : (Includes(name)) ? "$50" : "NOT FOUND"} size='small'/>
                             </span>
                             <Typography gutterBottom align="center" style={{ paddingTop: 10,marginLeft:60,marginRight:60}} variant="body1" component="span">
                                 {(name == "reiki") ? reiki : (Includes(name)) ? house : details}

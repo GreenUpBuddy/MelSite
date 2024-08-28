@@ -12,35 +12,34 @@ let list = ["time1","time2"];
 
 
 let GridSelect = () => {
-    return(<>
-    <div style={{justifyContent: "center"}}>
-    <Grid container item spacing={2} style={{paddingBottom: 20}}>
-        <Grid item xs={3}>
-            <ServiceCard
-            name= {"serv 1"}
-            details= {"temp dets"}
-            price= {"price 1"}
-            width={"30vw"}
-            image= {"https://placehold.co/350x350"}/>
-        </Grid>
-        <Grid item xs={3}>
-        <ServiceCard 
+    return(
+    <Stack style={{justifyContent: "center", width: "30vw", height: "36vw"}}>
+        <span style={{paddingBottom: 20}}>
+        <ServiceCard
+        name= {"serv 1"}
+        details= {"temp dets"}
+        price= {"price 1"}
+        width={"30vw"}
+        image= {"https://placehold.co/350x350"}/>
+        </span>
+        <span style={{paddingBottom: 20}}>
+        <ServiceCard
         name= {"serv 2"}
         details= {"temp dets"}
         price= {"price 2"}
         width={"30vw"}
+        height={"10vw"}
         image= {"https://placehold.co/350x350"}/>
-        </Grid>
-        <Grid item xs={3}>
-        <ServiceCard 
+        </span>
+        <span style={{paddingBottom: 20}}>
+        <ServiceCard
         name= {"serv 3"}
         details= {"temp dets"}
         price= {"price 3"}
         width={"30vw"}
         image= {"https://placehold.co/350x350"}/>
-        </Grid>
-    </Grid>
-    </div></>);
+        </span>
+    </Stack>);
 }
 let ConfirmSelect = (props) => {
     return(<>
@@ -68,7 +67,8 @@ export default function Book(){
             </LocalizationProvider>
         </div>
         <Stack style={{paddingTop: 25,paddingBottom: 20}}>
-        <Paper elevation={8} square={false} style={{ width: '90vw', maxWidth: '800px', height: '30vw', overflow: "auto", margin: '0 auto', paddingBottom: '20px' }}>
+        <span style={{ display: "flex", justifyContent: "center", alignItems: "flex-start", gap: "30px",paddingTop: "20px" }}>
+        <Paper elevation={8} square={false} style={{ width: '50vw', maxWidth: '800px', height: '36vw', overflow: "auto", paddingBottom: '20px' }}>
             <Stack>
                 <List>
                 {list.map((item, index) => (
@@ -81,11 +81,11 @@ export default function Book(){
                 </List>
             </Stack>
         </Paper>
-        <div style={{paddingTop: 20, justifyContent: "center", display: "flex", flexDirection: "column", alignItems: "center", gap: '20px' }}>
-            //maybe put this vertically next to the time?
-            <GridSelect/>
+        <GridSelect/>
+        </span>
+        <Stack style={{paddingTop: 20, justifyContent: "center", display: "flex", flexDirection: "column", alignItems: "center", gap: '20px' }}>
             <ConfirmSelect  date="1/1/1111" time="12:00 PM" service="serv 1"/>
-        </div>
+        </Stack>
         <div style={{paddingTop: 20, paddingBottom: 20}}>
         <Paper elevation={8} square={false} style={{ width: '90vw', maxWidth: '800px', height: '13vw', overflow: "auto", margin: '0 auto', padding: '20px', textAlign: 'center' }}>
             <Typography gutterBottom variant="h4">
