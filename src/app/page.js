@@ -2,6 +2,9 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import { MyAppBar } from "./nav/appbar";
 import { DataCard } from "./components/card";
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import { CardActionArea } from '@mui/material';
 import { Stack, Typography, Chip, Paper } from "@mui/material";
 import Grid from '@mui/material/Grid';
 
@@ -24,13 +27,19 @@ export default function Home() {
     <>
       <MyAppBar/>
       <Stack style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        <Image unoptimized key={0} style={{paddingBottom: 20}} src={img} height={500} width={750} alt="idk"/>
-        <Typography gutterBottom style={{ margin: '20px 0' }}>
-          THIS IS WHERE THE ABOUT SECTION WILL GO
-        </Typography>
+        <span style={{paddingBottom: 20}}>
+        <Card>
+            <CardContent style={{width: "50vw", textAlign: "center"}}>
+                <img width= {500} height={300} src="https://placehold.co/350x350"/>
+                <Typography gutterBottom variant="h5" component="div">
+                    ABOUT SECTION
+                </Typography>
+            </CardContent>
+        </Card>
+        </span>
         <div style={{paddingBottom: 20}}>
         <span>
-        <Grid container spacing={2} style={{paddingBottom: 20, justifyContent: "center"}}>
+        <Grid container spacing={2} style={{paddingBottom: 20, justifyContent: "center",width: "100vw"}}>
           <Grid item xs={3}>
           <DataCard 
             name= "Reiki Energy Healing"
@@ -64,9 +73,9 @@ export default function Home() {
       <Typography variant="h3" gutterBottom style={{ margin: '20px 0' }}>
         Reviews
       </Typography>
-      <Grid style={{paddingBottom: 20, justifyContent: "center"}} container spacing={8}>
-          <Grid item xs={3}>
-            <Paper elevation={8} style={{ width: '25vw', padding: '20px', backgroundColor: '#f5f5f5', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
+      <Grid direction={"row"} alignItems="center" justifyContent="center" marginLeft={5} container spacing={1}>
+          <Grid item xs={4}>
+            <Paper elevation={8} style={{ width: '30vw',height: 630,padding: '20px', backgroundColor: '#f5f5f5', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
               <Typography>
                 "A Profound Inner Exploration - My first reiki experience was an unexpected journey deep within myself. 
                 While unsure of what to expect, I was open and ready for the exploration. The session began with a focus on healing, 
@@ -80,8 +89,8 @@ export default function Home() {
               </Typography>
             </Paper>
           </Grid>
-          <Grid item xs={3}>
-            <Paper elevation={8} style={{ width: '25vw', padding: '20px', backgroundColor: '#f5f5f5', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
+          <Grid item xs={4}>
+            <Paper elevation={8} style={{ width: '30vw', height: 630 , padding: '20px', backgroundColor: '#f5f5f5', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
               <Typography>
               "First off...the whole experience was so peaceful. I was actually in a heightened emotional state when you came over. 
               Been dealing with somethings that have made me feel very down, a little depressed, and allowing my inner critic to take over. 
@@ -92,8 +101,8 @@ export default function Home() {
               </Typography>
             </Paper>
           </Grid>
-          <Grid item xs={3}>
-            <Paper elevation={8} style={{ width: '25vw', padding: '20px', backgroundColor: '#f5f5f5', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
+          <Grid item xs={4}>
+            <Paper elevation={8} style={{ width: '30vw' , height: 630 , padding: '20px', backgroundColor: '#f5f5f5', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
               <Typography>
               "I had one reiki session with melody and can not praise the experience enough. This was my first experience with reiki so I did not know what to fully expect. 
               Melody was very warm and inviting and made me feel very comfortable just upon our initial meeting. She was very knowledgeable and walked me through what the session would entail and gave a bit of her personal background and experiences with reiki as well which I think elevated the experience. 

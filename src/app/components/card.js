@@ -14,15 +14,15 @@ export const DataCard = (props) => {
   return (
     <Card sx={{ maxWidth: props.width }}>
       <CardActionArea key={"card" + key} component={Link} href={`date/${link}`} >
-        <Image
-          unoptimized
-          component="img"
-          height="140"
-          width="200"
-          src={props.image}
-          alt="green iguana"
-        />
-        <CardContent>
+        <CardContent style={{textAlign: "center", height: 400}}>
+            <Image
+              unoptimized
+              component="img"
+              height="140"
+              width="200"
+              src={props.image}
+              alt="green iguana"
+            />
             <Typography gutterBottom variant="h5" component="div" textAlign={"center"}>
                 {props.name}
             </Typography>

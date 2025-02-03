@@ -8,7 +8,7 @@ export const ServiceCard = (props) => {
     return(
     <>
         <Card sx={{ maxWidth: "25vw"}}>
-        <CardActionArea component={Button} >
+        <CardActionArea component={Card} >
             <CardContent>
                 <img style={{}} width= {80} height={80} src="https://placehold.co/350x350"/>
                 <Typography gutterBottom variant="h5" component="div">
