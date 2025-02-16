@@ -10,22 +10,22 @@ import Grid from "@mui/material/Grid";
 export default function Home() {
   const energy = JSON.parse(
     JSON.stringify(
-      require("/Users/jdsawyer/Desktop/Mel Site/mel-site/public/images/energy.jpeg")
+      require("/public/images/energy.jpeg")
     )
   );
   const egg = JSON.parse(
     JSON.stringify(
-      require("/Users/jdsawyer/Desktop/Mel Site/mel-site/public/images/egg.jpeg")
+      require("/public/images/egg.jpeg")
     )
   );
   const house = JSON.parse(
     JSON.stringify(
-      require("/Users/jdsawyer/Desktop/Mel Site/mel-site/public/images/house.jpeg")
+      require("/public/images/house.jpeg")
     )
   );
   const about = JSON.parse(
     JSON.stringify(
-      require("/Users/jdsawyer/Desktop/Mel Site/mel-site/public/images/about.jpeg")
+      require("/public/images/about.jpeg")
     )
   );
 

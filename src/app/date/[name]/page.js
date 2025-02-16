@@ -19,17 +19,17 @@ export default function Page({ params }) {
     const images = {
         energy: JSON.parse(
         JSON.stringify(
-          require("/Users/jdsawyer/Desktop/Mel Site/mel-site/public/images/energy.jpeg")
+          require("/public/images/energy.jpeg")
         )
       ),
       eggPic:  JSON.parse(
         JSON.stringify(
-          require("/Users/jdsawyer/Desktop/Mel Site/mel-site/public/images/egg.jpeg")
+          require("/public/images/egg.jpeg")
         )
       ),
       housePic: JSON.parse(
         JSON.stringify(
-          require("/Users/jdsawyer/Desktop/Mel Site/mel-site/public/images/house.jpeg")
+          require("/public/images/house.jpeg")
         )
       ),};
     let currImg = name.includes("Reiki") ? images['energy'] : name.includes("House") ? images['housePic'] : images['eggPic']
