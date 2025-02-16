@@ -30,7 +30,7 @@ export const DataCard = (props) => {
                 {props.price}
             </Typography>
 
-            <Typography variant="body2" color="text.secondary">
+            <Typography variant="body2" color="text.secondary"  fontFamily={"Open Sans"} fontSize={"1em"}>
                 {props.details}
             </Typography>   
         </CardContent>
