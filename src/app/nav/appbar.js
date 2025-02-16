@@ -8,7 +8,7 @@ import { Toolbar } from '@mui/material';
 
 
 export const MyAppBar = () => {
-  const img = JSON.parse(JSON.stringify(require("/Users/jdsawyer/Desktop/Mel Site/mel-site/public/images/image_50339841_cleaned_resized.png")));
+  const img = JSON.parse(JSON.stringify(require("/public/images/image_50339841_cleaned_resized.png")));
   return (
     <Box sx={{ flexGrow: 1 }} style={{paddingBottom: 20}}>
         <AppBar position="static">
