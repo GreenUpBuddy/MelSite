@@ -6,7 +6,6 @@ import ListIcon from '@mui/icons-material/List';
 import Image from "next/image";
 import Link from "next/link";
 
-
 export default function Page({ params }) {
     const reiki =  "An ancient technique used for stress reduction and relaxation.  It has been shown to have many benefits for both physical and mental health.  It’s a non-invasive therapy that involves me placing my hands near the body. I use 4 sacred herbs, stones and prayer to create a healing experience focused on clearing chakra blockages. \nThe Experience\nSet an intention for the session\nGrounding meditation (laying down)\nChakra clearing\nClosing ceremony\nDiscussion at the end\nNote: this practice is supportive of people from all different beliefs."
     const details = "This is a temporary placeholder for the details section...This is a temporary placeholder for the details section...This is a temporary placeholder for the details section...This is a temporary placeholder for the details section."

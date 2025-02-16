@@ -7,8 +7,6 @@ import CardContent from "@mui/material/CardContent";
 import { CardActionArea } from "@mui/material";
 import { Stack, Typography, Chip, Paper } from "@mui/material";
 import Grid from "@mui/material/Grid";
-
-
 export default function Home() {
   const energy = JSON.parse(
     JSON.stringify(
