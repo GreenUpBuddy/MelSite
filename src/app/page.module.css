@@ -228,3 +228,28 @@
     transform: rotate(0deg);
   }
 }
+
+@media (max-width: 700px) {
+  .grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .card {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .card img {
+    width: 100%;
+    height: auto;
+  }
+
+  .card h2 {
+    font-size: 1.2rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+}
