@@ -20,6 +20,7 @@ export const DataCard = (props) => {
               component="img"
               height="140"
               width="200"
+              style={{borderRadius: "10px",}}
               src={props.image}
               alt="green iguana"
             />
