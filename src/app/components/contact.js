@@ -33,6 +33,10 @@ export default function ContactForm() {
         templateParams,
         process.env.NEXT_PUBLIC_EMAIL_PUBLICKEY
       );
+      console.log(process.env.NEXT_PUBLIC_SERVICE_ID)
+      console.log(process.env.NEXT_PUBLIC_TEMPLATE_ID)
+        console.log(templateParams)
+          console.log(process.env.NEXT_PUBLIC_EMAIL_PUBLICKEY)
 
       setSubmitted(true);
       reset();
