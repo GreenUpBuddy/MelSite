@@ -57,7 +57,7 @@ export const MuiDrawer = () => {
                       ? "/"
                       : text == "Book"
                       ? "/book"
-                      : "/date/" + text.toLowerCase()
+                      : "/date/" + text
                   }
                 >
                   <ListItemIcon>{icons[text]}</ListItemIcon>
