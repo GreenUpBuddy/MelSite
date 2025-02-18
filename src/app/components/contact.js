@@ -28,16 +28,11 @@ export default function ContactForm() {
       };
 
       await emailjs.send(
-        process.env.NEXT_PUBLIC_SERVICE_ID,
-        process.env.NEXT_PUBLIC_TEMPLATE_ID,
+        "service_zspo845",
+        "template_hev7jir",
         templateParams,
-        process.env.NEXT_PUBLIC_EMAIL_PUBLICKEY
+        "i2GkWO3bKjp-nJA9a"
       );
-      console.log(process.env.NEXT_PUBLIC_SERVICE_ID)
-      console.log(process.env.NEXT_PUBLIC_TEMPLATE_ID)
-        console.log(templateParams)
-          console.log(process.env.NEXT_PUBLIC_EMAIL_PUBLICKEY)
-
       setSubmitted(true);
       reset();
     } catch (err) {
