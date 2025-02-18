@@ -64,7 +64,7 @@ export default function Page({ params }) {
               width={400}
               height={400}
               alt="Service Image"
-              style={{ width: "100%", maxWidth: "400px", borderRadius: 10 }}
+              style={{ width: "100%", maxWidth: "400px", borderRadius: 10, paddingTop: 20}}
             />
           </Stack>
 

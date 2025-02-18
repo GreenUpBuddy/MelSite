@@ -8,6 +8,7 @@ import { CardActionArea } from "@mui/material";
 import { Stack, Typography, Chip, Paper } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import ContactForm from "./components/contact";
+
 export default function Home() {
   const energy = JSON.parse(
     JSON.stringify(require("/public/images/energy.jpeg"))
@@ -130,7 +131,6 @@ export default function Home() {
         <Typography variant="h3" gutterBottom paddingTop={5}>
           Reviews
         </Typography>
-        <Typography variant="h4">Reviews</Typography>
         <Grid container spacing={2} justifyContent="center">
           {[
             "A Profound Inner Exploration - My first reiki experience was an unexpected journey deep within myself. While unsure of what to expect, I was open and ready for the exploration. The session began with a focus on healing, but soon transitioned into a powerful feeling of empowerment. This sense of inner strength blossomed into a wave of love, peace, and joy. Then came shift. Sadness arose, which I believe signaled a clearing of my heart chakra. Instead of resisting it, I embraced the feeling, allowing for a deeper acceptance - both of myself and those around me. With this acceptance came a profound sense of love, joy, and overall happiness. The session with Melody was truly transformative. Her ability to create a peaceful environment allowed me to fully surrender to the experience. This experience opened my eyes to the power of energy healing. I feel lighter, more centered, and ready to embrace life with a newfound sense of acceptance. Reiki is something I would like to incorporate into my life.",

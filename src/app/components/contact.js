@@ -2,6 +2,8 @@
 
 import { useForm } from "react-hook-form";
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
+
 import "./ContactForm.css"; // Import CSS file
 
 export default function ContactForm() {
@@ -13,26 +15,45 @@ export default function ContactForm() {
   } = useForm();
 
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState(null);
 
   const onSubmit = async (data) => {
-    console.log("Form submitted:", data);
-    setSubmitted(true);
-    reset();
+    setError(null);
+    try {
+      const templateParams = {
+        name: data.name,
+        email: data.email,
+        phone: data.phone,
+        message: data.message,
+      };
+
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_SERVICE_ID,
+        process.env.NEXT_PUBLIC_TEMPLATE_ID,
+        templateParams,
+        process.env.NEXT_PUBLIC_EMAIL_PUBLICKEY
+      );
+
+      setSubmitted(true);
+      reset();
+    } catch (err) {
+      setError("Failed to send message. Please try again.");
+      console.error("EmailJS Error:", err);
+    }
   };
 
   return (
     <div className="contact-container">
       <h2>Contact Me</h2>
       {submitted && <p className="success-message">Message sent successfully!</p>}
+      {error && <p className="error-message">{error}</p>}
       <form onSubmit={handleSubmit(onSubmit)}>
-        {/* Name Input */}
         <div className="form-group">
           <label>Name</label>
           <input type="text" {...register("name", { required: "Name is required" })} />
           {errors.name && <p className="error-message">{errors.name.message}</p>}
         </div>
 
-        {/* Email Input */}
         <div className="form-group">
           <label>Email</label>
           <input
@@ -45,7 +66,6 @@ export default function ContactForm() {
           {errors.email && <p className="error-message">{errors.email.message}</p>}
         </div>
 
-        {/* Phone Number Input */}
         <div className="form-group">
           <label>Phone Number</label>
           <input
@@ -58,14 +78,12 @@ export default function ContactForm() {
           {errors.phone && <p className="error-message">{errors.phone.message}</p>}
         </div>
 
-        {/* Message Input */}
         <div className="form-group">
           <label>Message</label>
           <textarea {...register("message", { required: "Message cannot be empty" })} rows={4}></textarea>
           {errors.message && <p className="error-message">{errors.message.message}</p>}
         </div>
 
-        {/* Submit Button */}
         <button type="submit" disabled={isSubmitting}>
           {isSubmitting ? "Sending..." : "Send Message"}
         </button>
