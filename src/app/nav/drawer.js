@@ -24,6 +24,7 @@ export const MuiDrawer = () => {
     Reiki: <FavoriteIcon />,
     "House Clearing & Blessing": <FavoriteIcon />,
     "Egg Limpia": <FavoriteIcon />,
+    "Tarot Card Reading": <FavoriteIcon />,
     Book: <EventIcon />,
   };
   return (
@@ -47,24 +48,28 @@ export const MuiDrawer = () => {
       >
         <Box p={2} width={250} textAlign="center" role="presentation">
           <List>
-            {["Home", "Reiki", "House Clearing & Blessing", "Egg Limpia"].map(
-              (text, index) => (
-                <ListItemButton
-                  key={text}
-                  component={Link}
-                  to={
-                    text == "Home"
-                      ? "/"
-                      : text == "Book"
-                      ? "/book"
-                      : "/date/" + text
-                  }
-                >
-                  <ListItemIcon>{icons[text]}</ListItemIcon>
-                  <ListItemText primary={text} />
-                </ListItemButton>
-              )
-            )}
+            {[
+              "Home",
+              "Reiki",
+              "House Clearing & Blessing",
+              "Egg Limpia",
+              "Tarot Card Reading",
+            ].map((text, index) => (
+              <ListItemButton
+                key={text}
+                component={Link}
+                to={
+                  text == "Home"
+                    ? "/"
+                    : text == "Book"
+                    ? "/book"
+                    : "/date/" + text
+                }
+              >
+                <ListItemIcon>{icons[text]}</ListItemIcon>
+                <ListItemText primary={text} />
+              </ListItemButton>
+            ))}
           </List>
         </Box>
       </Drawer>

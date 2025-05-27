@@ -14,23 +14,29 @@ export default function Page({ params }) {
     "A house blessing is a ceremonial practice aimed at purifying and instilling positive energy within a home,  conducted by a spiritual leader or healer.This ritual may involve the use of prayers, the burning of sage or resin, and the sprinkling of cleanings waters.";
   const egg =
     "An egg limpia, also known as an egg cleansing, is a traditional practice in various cultures, particularly in Latin America, where an egg is used as a tool for spiritual cleansing and healing. The process involves rolling a raw egg over the body while setting the intention to absorb negative energy or ailments. After the cleansing, the egg is often broken into a glass of water to reveal patterns that are interpreted to assess the individual’s emotional and spiritual state. The benefits of an egg limpia may include emotional relief, a sense of renewed energy, and alleviation of stress or anxiety. Practitioners believe that this ritual can help clear away bad energies and promote overall well-being, making it a holistic approach to self-care and personal empowerment.";
+  const tarot =
+    "These readings are designed to illuminate your path, offering clarity and guidance on your life's journey. Whether you're facing a crossroads, seeking answers to pressing questions, or simply looking to explore your inner self, my intuitive approach to tarot provides a unique and transformative experience. In each session, I draw from a selection of carefully curated tarot decks, each imbued with its own energy and symbolism. This diversity allows for a deeper exploration of your situation, resonating with various aspects of your life. With a harmonious blend of traditional meanings and personal intuition, I bring you insights that are both profound and applicable to your unique circumstances. Every reading is tailored to you, ensuring that your questions are addressed and your spirit is nourished.";
 
   let nameR = "Reiki Energy Healing";
   let nameH = "House Clearing & Blessing";
   let nameE = "Egg Limpia";
+  let nameT = "Tarot Card Reading";
   let name = params.name.replaceAll("%20", " ");
 
   const images = {
     energy: require("/public/images/energy.jpeg"),
     eggPic: require("/public/images/egg.jpeg"),
     housePic: require("/public/images/house.jpeg"),
+    tarotPic: require("/public/images/tarot.jpeg"),
   };
 
   let currImg = name.includes("Reiki")
     ? images.energy
     : name.includes("House")
     ? images.housePic
-    : images.eggPic;
+    : name.includes("Egg")
+    ? images.eggPic
+    : images.tarotPic;
 
   return (
     <main style={{ overflow: "hidden" }}>
@@ -64,7 +70,7 @@ export default function Page({ params }) {
               width={400}
               height={400}
               alt="Service Image"
-              style={{ width: "100%", maxWidth: "400px", borderRadius: 10, paddingTop: 20}}
+              style={{ width: "100%", maxWidth: "400px", borderRadius: 10 }}
             />
           </Stack>
 
@@ -78,7 +84,9 @@ export default function Page({ params }) {
               ? nameR
               : name.includes("House")
               ? nameH
-              : nameE}
+              : name.includes("Egg")
+              ? nameE
+              : nameT}
           </Typography>
 
           {/* Price */}
@@ -91,6 +99,8 @@ export default function Page({ params }) {
                 ? "$50"
                 : name.includes("Egg")
                 ? "$90"
+                : name.includes("Tarot")
+                ? "$65"
                 : "NOT FOUND"
             }
             size="small"
@@ -114,6 +124,8 @@ export default function Page({ params }) {
               ? house
               : name.includes("Egg")
               ? egg
+              : name.includes("Tarot")
+              ? tarot
               : details}
           </Typography>
 
